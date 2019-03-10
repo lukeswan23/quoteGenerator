@@ -1,0 +1,26 @@
+html, body {
+	height: 100vh
+}
+
+body {
+	background-color: orange;
+}
+
+.card {
+	font-family: 'Raleway', sans-serif;
+	width: 70%;
+
+}
+
+#by {
+	color: white;
+	text-decoration: underline  white;
+	font-family: 'Mystery Quest', cursive;
+
+}
+/*https://stackoverflow.com/questions/42388989/bootstrap-4-center-vertical-and-horizontal-alignment/44801382
+fix taken from here */
+.container, .row.justify-content-center.align-items-center {
+  height: 100%;
+  min-height: 100%;
+}

@@ -9,6 +9,7 @@ body {
 .card {
 	font-family: 'Raleway', sans-serif;
 	width: 70%;
+	font-style: bold;
 
 }
 
@@ -23,4 +24,16 @@ fix taken from here */
 .container, .row.justify-content-center.align-items-center {
   height: 100%;
   min-height: 100%;
+}
+
+.btn#twitter {
+	padding: 0;
+}
+
+.btn#tumblr {
+	padding: 0;
+}
+
+.btn {
+	-webkit-appearance: none;
 }

@@ -45,28 +45,43 @@ function randomQuote(input) {
 let randColour = "#" + Math.floor(Math.random()*16777215).toString(16);
 console.log(randColour)
 
+function tweet() {
+	window.open("https://twitter.com/intent/tweet?text=" + $("#text").text() + '"' + " "  + $("#author").text().slice(2)) //remove " -" from tweet
 
-  $(document).ready(function() {
-    $("#text").html('"' + quote);
+}
+
+function tumble() {
+	window.open("https://www.tumblr.com/widgets/share/tool?posttype=quote?.?&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'" + $("#text").text() + '"' + " "  + $("#author").text().slice(2))
+
+}
+
+
+$(document).ready(function() {
+  $("#text").html('"' + quote);
+  $("#author").html('- ' + author)
+  $("body").css('background-color', randColour)
+  $(".card p").css('color', randColour)
+  $(".btn-primary").css('background-color', randColour)
+  $(".fa-twitter-square").css('color', randColour)
+  $(".fa-tumblr-square").css('color', randColour)
+
+
+  $("#random").click(function(){
+  	rand = getRandomIntInclusive(0, length)
+		quote = quotes[rand][0];
+		author = quotes[rand][1];
+		randColour = "#" + Math.floor(Math.random()*16777215).toString(16);
+		$('.card p').fadeOut(0);
+		$('.card p').fadeIn(400);
+		$("#text").html('"' + quote);
     $("#author").html('- ' + author)
     $("body").css('background-color', randColour)
     $(".card p").css('color', randColour)
     $(".btn-primary").css('background-color', randColour)
-
-    $("#random").click(function(){
-    	rand = getRandomIntInclusive(0, length)
-			quote = quotes[rand][0];
-			author = quotes[rand][1];
-			randColour = "#" + Math.floor(Math.random()*16777215).toString(16);
-			$('.card p').fadeOut(0);
-			$('.card p').fadeIn(400);
-			$("#text").html('"' + quote);
-	    $("#author").html('- ' + author)
-	    $("body").css('background-color', randColour)
-	    $(".card p").css('color', randColour)
-	    $(".btn-primary").css('background-color', randColour)
-		});
-  });
+    $(".fa-twitter-square").css('color', randColour)
+		 	$(".fa-tumblr-square").css('color', randColour)
+	});
+});
 
 
 
